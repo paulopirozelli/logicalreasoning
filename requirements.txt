@@ -1,0 +1,5 @@
+pandas
+datasets
+torch
+transformers
+evaluate
