@@ -24,7 +24,7 @@ To fine-tune the various transformer models for the Hypothesis Classification ta
 
 Usage:
 ```bat
-python fine_tuning.py <model_name> <dataset> <learning_rate> <batch_size>
+python fine_tuning.py <checkpoint> <dataset> <learning_rate> <batch_size>
 ```
 
 Example:
@@ -53,7 +53,7 @@ To conduct the probing experiment (sec. 5), execute:
 
 Usage:
 ```bat
-python probing_comparison.py <model_name> <dataset> <classifier_type> <learning_rate> <batch_size>
+python probing_comparison.py <finetuned model> <dataset> <classifier_type> <learning_rate> <batch_size>
 ```
 
 Example:
@@ -75,7 +75,7 @@ For the layerwise probing experiment (sec. 6), run:
 
 Usage:
 ```bat
-python probing_layer.py <fine-tuned_model> <dataset> <classifier_type> <layer> <learning_rate> <batch_size>
+python probing_layer.py <finetuned model> <dataset> <classifier_type> <layer> <learning_rate> <batch_size>
 ```
 
 Example:
@@ -93,7 +93,7 @@ If you want to run multiple layers in a row, use the loop_layer.py script. By de
 
 Usage:
 ```bat
-python layer_loop.py <fine-tuned_model> <dataset> <batch_size>
+python layer_loop.py <finetuned model> <dataset> <batch_size>
 ```
 
 Example:
