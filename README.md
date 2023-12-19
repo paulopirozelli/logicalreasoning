@@ -1,17 +1,19 @@
 This is the repository for the paper "Assessing Logical Reasoning Capabilities of Encoder-Only Transformer Models".
 
 
+Bash commands should be run in the project directory.
+
 ### Fine-tuning Transformer Models
 To fine-tune the various transformer models for the Hypothesis Classification task, utilize the script fine_tuning.py.
 
 Usage:
 ```bat
-python fine_tuning.py <model_name> <dataset> <learning_rate> <batch_size> <base_folder>
+python fine_tuning.py <model_name> <dataset> <learning_rate> <batch_size>
 ```
 
 Example:
 ```bat
-python fine_tuning.py bert-base-uncased FOLIO 1e-6 64 /logicalreasoning
+python fine_tuning.py bert-base-uncased FOLIO 1e-6 64
 ```
 
 This command saves results in results_finetuning.csv and stores fine-tuned models in the 'Models' folder. For 'deberta', models are saved in a subfolder labeled 'microsoft'.
@@ -27,12 +29,12 @@ To conduct the probing experiment, execute:
 
 Usage:
 ```bat
-python fine_tuning.py <model_name> <dataset> <learning_rate> <batch_size> <base_folder>
+python probing_comparison.py <model_name> <dataset> <classifier_type> <learning_rate> <batch_size>
 ```
 
 Example:
 ```bat
-python probing_comparison.py bert-base-uncased_FOLIO_2_1e-06.pth FOLIO 1layer 1e-06 64 /workspace/logicFT
+python probing_comparison.py bert-base-uncased_FOLIO_2_1e-06.pth FOLIO 1layer 1e-06 64
 ```
 
 This generates results_probing.csv with the following data:
@@ -46,12 +48,12 @@ For the layerwise probing experiment, run:
 
 Usage:
 ```bat
-python probing_layer.py <fine-tuned_model> <dataset> <classifier_type> <layer> <learning_rate> <batch_size> <base_folder>
+python probing_layer.py <fine-tuned_model> <dataset> <classifier_type> <layer> <learning_rate> <batch_size>
 ```
 
 Example:
 ```bat
-python probing_comparison.py bert-base-uncased_FOLIO_2_1e-06.pth FOLIO 1layer 1e-06 64 /workspace/logicFT
+python probing_layer.py bert-base-uncased_FOLIO_2_1e-06.pth FOLIO 1layer 12 1e-06 64
 ```
 
 This saves results in results_probing.csv containing the following data:
