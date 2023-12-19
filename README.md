@@ -5,11 +5,10 @@ This is the repository for the paper "Assessing Logical Reasoning Capabilities o
 ## Results 
 Full results for the experiments are found in the sheet [results.xlsx](https://github.com/paulopirozelli/logicalreasoning/blob/main/results.xlsx). 
 
-
 ## Datasets
-Datasets are store in a Google Drive [folder](https://drive.google.com/drive/folders/1YpRoveEJJZIOUyAMeeo5LF6kt8eAFkya). 
+To facilitate reproduction, we organized all datasets used in this paper in a single folder. It can be found in our Google Drive [folder](https://drive.google.com/drive/folders/1YpRoveEJJZIOUyAMeeo5LF6kt8eAFkya) (5.18GB). Download this folder and replace the original 'LogicData' folder from the repository.
 
-Appendix A of the paper describes the datasets in detail and gives the original sources.
+Appendix A of the paper describes the datasets in detail and indicates the sources from they were extracted.
 
 ## Code
 Bash commands should be run in the project directory.
