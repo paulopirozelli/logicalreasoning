@@ -11,7 +11,13 @@ To facilitate reproduction, we organized all datasets used in this paper in a si
 Appendix A of the paper describes the datasets in detail and indicates the sources from they were extracted.
 
 ## Code
-Bash commands should be run in the project directory.
+Bash commands should be run in the main directory.
+
+The dataset names are:
+
+```
+FOLIO, LogicNLI, RuleTaker, SimpleLogic
+```
 
 ### Fine-tuning Transformer Models
 To fine-tune the various transformer models for the Hypothesis Classification task (sec. 4), utilize the script fine_tuning.py.
@@ -34,11 +40,13 @@ The CSV file includes the following data:
 checkpoint, dataset_name, batch_size, best_epoch, learning_rate, best_train_acc, best_train_loss.item(), best_validation_acc, best_validation_loss.item(), test_acc, test_loss.item(), f1_micro, f1_macro, f1_weighted
 ```
 
+
 The full list of enconder-only transformer models tested in this task are: 
 
 ```
 distilbert-base-uncased, bert-base-uncased, bert-large-uncased, roberta-base, roberta-large, allenai/longformer-base-4096, allenai/longformer-large-4096, microsoft/deberta-v3-xsmall, microsoft/deberta-v3-small, microsoft/deberta-v3-base, microsoft/deberta-v3-large, microsoft/deberta-v2-xlarge, microsoft/deberta-v2-xxlarge, albert-base-v2, albert-large-v2, albert-xlarge-v2, albert-xxlarge-v2, xlm-roberta-base, xlm-roberta-large, xlnet-base-cased, xlnet-large-cased
 ```
+
 
 ### Probing Comparison
 To conduct the probing experiment (sec. 5), execute:
