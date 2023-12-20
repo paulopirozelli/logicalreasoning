@@ -1,4 +1,4 @@
-This is the repository for the paper "Assessing Logical Reasoning Capabilities of Encoder-Only Transformer Models".
+This is the repository for the paper ["Assessing Logical Reasoning Capabilities of Encoder-Only Transformer Models"](https://arxiv.org/abs/2312.11720).
 
 > **Abstract:** Logical reasoning is central to complex human activities, such as thinking, debating, and planning; it is also a central component of many AI systems as well. In this paper, we investigate the extent to which encoder-only transformer language models (LMs) can reason according to logical rules. We ask whether those LMs can deduce theorems in propositional calculus and first-order logic; if their relative success in these problems reflects general logical capabilities; and which layers contribute the most to the task. First, we show for several encoder-only LMs that they can be trained, to a reasonable degree, to determine logical validity on various datasets. Next, by cross-probing fine-tuned models on these datasets, we show that LMs have difficulty in transferring their putative logical reasoning ability, which suggests that they may have learned dataset-specific features, instead of a general capability. Finally, we conduct a layerwise probing experiment, which shows that the hypothesis classification task is mostly solved through higher layers.
 
@@ -8,7 +8,7 @@ Full results for the experiments are found in the sheet [results.xlsx](https://g
 ## Datasets
 To facilitate reproduction, we organized all datasets used in this paper in a single folder, which can be found in our Google Drive [folder](https://drive.google.com/drive/folders/1YpRoveEJJZIOUyAMeeo5LF6kt8eAFkya) (5.18GB). Download this folder and replace the original 'LogicData' folder from the repository.
 
-Appendix A of the paper describes the datasets in detail and indicates the sources from they were extracted.
+Appendix A of the paper describes the datasets in detail and indicates the sources they were extracted from.
 
 ## Code
 Bash commands should be run in the main directory.
@@ -67,7 +67,7 @@ This generates results_probing.csv with the following data:
 model_name, dataset_name, classifier_type, batch_size, best_epoch, learning_rate, best_train_acc, best_train_loss.item(), best_validation_acc, best_validation_loss.item(), test_acc, test_loss.item(), f1_micro, f1_macro, f1_weighted
 ```
 
-As explained in the paper, we only tested fine-tuned RoBERTa-large models in this and the next experiments, due to computational resources constrains. This model demonstrated a suitable balance between performance, consistency among datasets, and training time in the fine-tuning tests.
+As explained in the paper, we only tested fine-tuned RoBERTa-large models in this and the next experiment, due to computational resources constrains. This model demonstrated a suitable balance between performance, consistency among datasets, and training time in the fine-tuning tests.
 
 
 ### Layerwise Probing
@@ -105,34 +105,13 @@ python layer_loop.py bert-base-uncased_FOLIO_2_1e-06.pth FOLIO 64
 If you use or discuss this paper in your work, please cite it as follows:
 
 ```
-@inproceedings{10.1145/3459637.3482012,
-author = {Paschoal, Andr\'{e} F. A. and Pirozelli, Paulo and Freire, Valdinei and Delgado, Karina V. and Peres, Sarajane M. and Jos\'{e}, Marcos M. and Nakasato, Fl\'{a}vio and Oliveira, Andr\'{e} S. and Brand\~{a}o, Anarosa A. F. and Costa, Anna H. R. and Cozman, Fabio G.},
-title = {Pir\'{a}: A Bilingual Portuguese-English Dataset for Question-Answering about the Ocean},
-year = {2021},
-isbn = {9781450384469},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3459637.3482012},
-doi = {10.1145/3459637.3482012},
-abstract = {Current research in natural language processing is highly dependent on carefully produced
-corpora. Most existing resources focus on English; some resources focus on languages
-such as Chinese and French; few resources deal with more than one language. This paper
-presents the Pir\'{a} dataset, a large set of questions and answers about the ocean and
-the Brazilian coast both in Portuguese and English. Pir\'{a} is, to the best of our knowledge,
-the first QA dataset with supporting texts in Portuguese, and, perhaps more importantly,
-the first bilingual QA dataset that includes this language. The Pir\'{a} dataset consists
-of 2261 properly curated question/answer (QA) sets in both languages. The QA sets
-were manually created based on two corpora: abstracts related to the Brazilian coast
-and excerpts of United Nation reports about the ocean. The QA sets were validated
-in a peer-review process with the dataset contributors. We discuss some of the advantages
-as well as limitations of Pir\'{a}, as this new resource can support a set of tasks in
-NLP such as question-answering, information retrieval, and machine translation.},
-booktitle = {Proceedings of the 30th ACM International Conference on Information & Knowledge Management},
-pages = {4544–4553},
-numpages = {10},
-keywords = {Portuguese-English dataset, question-answering dataset, bilingual dataset, ocean dataset},
-location = {Virtual Event, Queensland, Australia},
-series = {CIKM '21}
+@misc{pirozelli2023assessing,
+      title={Assessing Logical Reasoning Capabilities of Encoder-Only Transformer Models}, 
+      author={Paulo Pirozelli and Marcos M. José and Paulo de Tarso P. Filho and Anarosa A. F. Brandão and Fabio G. Cozman},
+      year={2023},
+      eprint={2312.11720},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
